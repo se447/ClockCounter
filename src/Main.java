@@ -3,7 +3,7 @@ import java.util.Scanner;
 
 public class Main {
 
-    public static void main(String[] args) {
+    public static void main(String[] args) throws Exception {
         Scanner reader = new Scanner(System.in);
         // write here code to ensure that BoundedCounter works as expected
         // before starting 78.3 remove the extra code and use the skeleton shown
@@ -27,9 +27,10 @@ public class Main {
         hours.setValue(h);
         
         
-        int i = 0;
-        while (i < 121) {
+       
+        while (true) {
             System.out.println(hours + ":" + minutes + ":" + seconds); //current time
+            Thread.sleep(1000);
             
             //now advance minutes
             //if minutes becomes zero, advance hours by 1
@@ -44,7 +45,7 @@ public class Main {
                     hours.next();
                 }
             
-            i++;
+            
         }
         
     }
