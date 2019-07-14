@@ -27,4 +27,10 @@ public class BoundedCounter {
     public int getValue() {
         return this.value;
     }
+    
+    public void setValue(int value) {
+        if (value >= 0 && value <= this.upperLimit) {
+            this.value = value;
+        }
+    }
 }
