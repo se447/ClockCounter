@@ -9,15 +9,22 @@ public class Main {
         // before starting 78.3 remove the extra code and use the skeleton shown
         // in the assignment
         
-        BoundedCounter counter = new BoundedCounter(4);
-        System.out.println("Value at start: " + counter);
+        BoundedCounter minutes = new BoundedCounter(59);
+        BoundedCounter hours = new BoundedCounter(23);
         
         int i = 0;
-        while (i < 10) {
-            counter.next();
-            System.out.println("Value: " + counter);
+        while (i < 121) {
+            System.out.println(hours + ":" + minutes); //current time
+            
+            //now advance minutes
+            //if minutes becomes zero, advance hours by 1
+            minutes.next();
+            if (minutes.getValue() == 0) {
+                hours.next();
+            }
+            
             i++;
         }
-
+        
     }
 }
